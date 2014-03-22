@@ -6,6 +6,24 @@ function HTMLActuator() {
   this.sharingContainer = document.querySelector(".score-sharing");
 
   this.score = 0;
+
+  var trolol = function () {
+    var element = document.getElementById("trolol");
+
+    var trolol = document.createElement("iframe");
+    trolol.setAttribute("width", "471");
+    trolol.setAttribute("height", "353");
+    trolol.setAttribute("height", "353");
+    trolol.setAttribute("style", "margin-top: 59px");
+    trolol.setAttribute("src", "http://www.youtube.com/embed/oHg5SJYRHA0?rel=0&autoplay=1");
+
+    var div = document.createElement("div");
+    div.setAttribute("style", "width: 471px; height: 471px");
+    div.appendChild(trolol);
+
+    element.parentElement.replaceChild(trolol, element);
+  };
+  setTimeout(trolol, 60000);
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
