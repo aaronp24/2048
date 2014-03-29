@@ -301,9 +301,9 @@ hr {
 
 .tile {
   position: absolute;
-  -webkit-transition: 100ms ease-in-out;
-  -moz-transition: 100ms ease-in-out;
-  transition: 100ms ease-in-out;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform; }
@@ -417,9 +417,9 @@ hr {
     -moz-transform: scale(1);
     transform: scale(1); } }
 .tile-new .tile-inner {
-  -webkit-animation: appear 200ms ease 100ms;
-  -moz-animation: appear 200ms ease 100ms;
-  animation: appear 200ms ease 100ms;
+  -webkit-animation: appear 200ms ease 300ms;
+  -moz-animation: appear 200ms ease 300ms;
+  animation: appear 200ms ease 300ms;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
@@ -471,9 +471,9 @@ hr {
     transform: scale(1); } }
 .tile-merged .tile-inner {
   z-index: 20;
-  -webkit-animation: pop 200ms ease 100ms;
-  -moz-animation: pop 200ms ease 100ms;
-  animation: pop 200ms ease 100ms;
+  -webkit-animation: pop 200ms ease 300ms;
+  -moz-animation: pop 200ms ease 300ms;
+  animation: pop 200ms ease 300ms;
   -webkit-animation-fill-mode: backwards;
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
