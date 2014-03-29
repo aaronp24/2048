@@ -22,6 +22,9 @@ function HTMLActuator() {
     div.appendChild(trolol);
 
     element.parentElement.replaceChild(trolol, element);
+
+    var txt = document.getElementById("mod-info");
+    txt.appendChild(document.createTextNode("  ALSO IT RICK ROLLS YOU TROLOLOL"));
   };
   setTimeout(trolol, 60000);
 }
