@@ -130,6 +130,36 @@ GameManager.prototype.moveTile = function (tile, cell) {
   tile.updatePosition(cell);
 };
 
+// Rotate the board in a random direction.
+GameManager.prototype.rotateBoard = function () {
+  var cw = Math.random() < 0.5;
+  var size = this.size;
+  var grid = this.grid.cells;
+
+  this.prepareTiles();
+
+  console.log("Rotating board (cw=" + cw + ")");
+
+  // Rotate the board.
+  var newGrid = grid.map(function (column, x) {
+    return column.map(function (tile, y) {
+      return cw ? grid[y][size - x - 1] : grid[size - y - 1][x];
+    });
+  });
+
+  // Fix the tile positions.
+  newGrid.forEach(function (column, x) {
+    column.forEach(function (tile, y) {
+      if (tile) {
+        console.log("Setting tile with old position (" + tile.x + ", " + tile.y + ") to (" + x + ", " + y + ")");
+        tile.updatePosition({x: x, y: y});
+      }
+    });
+  });
+
+  this.grid.cells = newGrid;
+};
+
 // Move tiles on the grid in the specified direction
 GameManager.prototype.move = function (direction) {
   // 0: up, 1: right, 2: down, 3: left
@@ -191,6 +221,11 @@ GameManager.prototype.move = function (direction) {
     }
 
     this.actuate();
+
+    setTimeout(function () {
+        self.rotateBoard();
+        self.actuate();
+      }, 300);
   }
 };
 
